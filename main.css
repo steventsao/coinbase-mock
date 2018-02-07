@@ -1,0 +1,170 @@
+body {
+  display: grid;
+  grid-template-columns: 12fr;
+  grid-template-areas: "header" "content" "summary";
+  grid-gap: 10px;
+  font-family: "Roboto", sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgb(244, 247, 250);
+}
+
+body > * {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+header {
+  grid-area: header;
+  min-height: 65px;
+}
+
+.brand {
+  display: grid;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-template-columns: 6fr 6fr;
+  grid-template-areas: "brand-name settings";
+  grid-template-rows: 12fr;
+  min-height: 70px;
+  background-color: rgb(6, 103, 208);
+  color: white;
+}
+
+.settings {
+  grid-area: settings;
+  align-self: center;
+  justify-self: end;
+}
+
+.brand-name {
+  grid-area: brand-name;
+  justify-self: start;
+  align-self: center;
+}
+
+.nav {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 12fr;
+  /* How to make columns 1fr but the 1st grid without text wrap? */
+  grid-template-columns: repeat(6, 2fr);
+  min-height: 63px;
+  border-bottom-color: rgb(125, 149, 182);
+}
+
+.nav > * {
+  justify-self: center;
+  align-self: center;
+  border-bottom-color: rgb(218, 225, 233);
+}
+
+.nav > *:hover {
+  cursor: pointer;
+  border-bottom: rgb(6, 103, 208) 1px solid;
+}
+
+.nav-item {
+  display: grid;
+  height: 100%;
+}
+
+.nav-item * {
+  align-self: center;
+  color: rgb(125, 149, 182);
+}
+
+.content {
+  grid-area: content;
+  min-height: 405px;
+  display: grid;
+  grid-template-rows: 2fr 10fr;
+  grid-template-columns: 12fr;
+  grid-template-areas: "coins" "price";
+  color: rgb(125, 149, 182);
+}
+
+.coins {
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-area: coins;
+  border-bottom: 1px solid rgb(218, 225, 233);
+  grid-template-columns: 9fr 3fr;
+  grid-template-areas: "price time";
+  display: grid;
+}
+
+.coins ul > li {
+  align-self: center;
+  display: inline-block;
+  /* justify-self: end; */
+}
+
+.coins ul.intervals {
+  grid-area: time;
+  align-self: center;
+  justify-self: end;
+}
+
+.coins ul.names {
+  justify-self: start;
+  grid-area: price;
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  grid-column-gap: 20px;
+}
+
+.coins ul.names > li {
+  display: block;
+}
+
+.coins ul.names > li:hover {
+  border-bottom: rgb(6, 103, 203) 1px solid;
+  cursor: pointer;
+}
+
+.price {
+  grid-area: price;
+  border-bottom: 1px solid rgb(218, 225, 233);
+  display: grid;
+  grid-template-columns: repeat(3, 4fr);
+}
+
+.price > div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-self: center;
+  justify-self: center;
+  font-size: 20px;
+  color: rgb(78, 92, 110);
+}
+
+.summary {
+  display: grid;
+  grid-area: summary;
+  grid-gap: 10px;
+  grid-template-areas: "left right";
+  grid-template-columns: 6fr 6fr;
+  grid-template-rows: 250px;
+  background-color: rgb(244, 247, 250);
+}
+
+svg {
+  fill: rgb(125, 149, 182);
+}
+
+.left {
+  grid-area: "left";
+  background-color: white;
+}
+
+.right {
+  grid-area: "right";
+  background-color: white;
+}
+
+.activity {
+  grid-area: activity;
+}
