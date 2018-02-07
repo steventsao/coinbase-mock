@@ -91,9 +91,10 @@
     grid-area: content;
     min-height: 405px;
     display: grid;
-    grid-template-rows: 3fr 9fr;
+    grid-template-rows: 2fr 10fr;
     grid-template-columns: 12fr;
     grid-template-areas: "coins" "price";
+    color: rgb(125, 149, 182);
   }
 
   .coins {
@@ -101,7 +102,7 @@
     padding-right: 20px;
     grid-area: coins;
     border-bottom: 1px solid rgb(218, 225, 233);
-    grid-template-columns: 6fr 6fr;
+    grid-template-columns: 9fr 3fr;
     grid-template-areas: "price time";
     display: grid;
   }
@@ -109,18 +110,30 @@
   .coins ul>li {
     align-self: center;
     display: inline-block;
-    justify-self: end;
+    /* justify-self: end; */
   }
 
-  .coins ul {
+  .coins ul.intervals {
     grid-area: time;
     align-self: center;
     justify-self: end;
   }
 
-  .coins h3 {
+  .coins ul.names {
     justify-self: start;
     grid-area: price;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    grid-column-gap: 20px;
+  }
+
+  .coins ul.names>li {
+    display: block;
+  }
+
+  .coins ul.names>li:hover {
+    border-bottom: rgb(6, 103, 203) 1px solid;
+    cursor: pointer;
 
   }
 
@@ -223,8 +236,13 @@
   </header>
   <div class="content">
     <div class="coins">
-      <h3>Price Charts</h3>
-      <ul>
+      <ul class="names">
+        <li>Bitcoin $7,4976.78</li>
+        <li>Bitcoin Cash $927.47</li>
+        <li>Ethereum $751.99</li>
+        <li>Litecoin $140.00</li>
+      </ul>
+      <ul class="intervals">
         <li>1H</li>
         <li>1D</li>
         <li>1W</li>
