@@ -19,6 +19,20 @@ header {
   min-height: 65px;
 }
 
+.header {
+  padding-left: 20px;
+  display: grid;
+  grid-template-rows: 12fr;
+  grid-template-columns: 9fr 3fr;
+  align-items: center;
+  color: rgb(6, 103, 208);
+}
+.header > * {
+  font-weight: normal;
+}
+.header > .options {
+  justify-self: center;
+}
 .brand {
   display: grid;
   padding-left: 20px;
@@ -86,6 +100,23 @@ header {
   color: rgb(125, 149, 182);
 }
 
+.coin-list {
+  text-decoration: none;
+  list-style: none;
+}
+.coin-list li {
+  display: grid;
+  grid-template-areas: "svg description";
+  grid-template-columns: 1fr 11fr;
+  align-content: center;
+}
+.coin-list :not(svg) {
+  grid-area: description;
+  align-self: center;
+}
+.coin-list svg {
+  grid-area: svg;
+}
 .coins {
   padding-left: 20px;
   padding-right: 20px;
